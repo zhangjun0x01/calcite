@@ -410,3 +410,16 @@ SqlDrop SqlDropFunction(Span s, boolean replace) :
         return SqlDdlNodes.dropFunction(s.end(this), ifExists, id);
     }
 }
+
+SqlMigrateTable SqlMigrateTable() :
+{
+    SqlIdentifier tableName;
+    SqlParserPos pos;
+}
+{
+    <MIGRATE> <TABLE> { pos = getPos();}
+    tableName = SimpleIdentifier()
+    {
+        return new SqlMigrateTable(pos, tableName);
+    }
+}

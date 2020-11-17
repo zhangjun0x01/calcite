@@ -30,8 +30,11 @@ data: {
       "org.apache.calcite.sql.SqlCreate"
       "org.apache.calcite.sql.SqlDrop"
       "org.apache.calcite.sql.ddl.SqlDdlNodes"
+      "org.apache.calcite.sql.SqlMigrateTable"
       "java.util.Map"
       "java.util.HashMap"
+      "java.util.Collections"
+      "java.util.List"
     ]
 
     # List of new keywords. Example: "DATABASES", "TABLES". If the keyword is
@@ -44,6 +47,7 @@ data: {
       "JAR"
       "FILE"
       "ARCHIVE"
+      "MIGRATE"
     ]
 
     # List of non-reserved keywords to add;
@@ -70,6 +74,11 @@ data: {
       "SqlCreateType"
       "SqlCreateView"
       "SqlCreateFunction"
+    ]
+
+
+    statementParserMethods: [
+        "SqlMigrateTable()"
     ]
 
     # List of methods for parsing extensions to "DROP" calls.

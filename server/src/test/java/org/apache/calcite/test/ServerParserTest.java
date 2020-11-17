@@ -313,4 +313,10 @@ class ServerParserTest extends SqlParserTest {
     sql(sql).ok(expected);
   }
 
+  @Test void testCallMigrateTable() {
+    final String sql = "migrate table aa";
+    final String expected = "MIGRATE TABLE `AA`";
+    sql(sql).ok(expected);
+  }
+
 }
